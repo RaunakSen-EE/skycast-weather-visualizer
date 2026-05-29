@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>SkyCast</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1> SkyCast</h1>
+
+        <p class="subtitle">
+            Real-Time Weather Visualizer
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="city"
+                placeholder="Enter city name"
+                required
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+        {% if weather %}
+
+        <div class="weather-card">
+
+            <h2>{{ weather.city }}</h2>
+
+            <p>
+                 Weather:
+                {{ weather.weather }}
+            </p>
+
+            <p>
+                 Temperature:
+                {{ weather.temp }} °C
+            </p>
+
+            <p>
+                 Humidity:
+                {{ weather.humidity }} %
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
+
