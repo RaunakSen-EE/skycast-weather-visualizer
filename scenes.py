@@ -25,6 +25,23 @@ BLACK = (0, 0, 0)
 
 font = pygame.font.SysFont("Arial", 40)
 
+# GRAPH LOADER FUNCTION
+
+def draw_graph():
+
+    try:
+
+        graph = pygame.image.load("temp_graph.png")
+
+        # resized graph nicely
+        graph = pygame.transform.scale(graph, (320, 220))
+
+        # displayed graph
+        screen.blit(graph, (20, 340))
+
+    except:
+        pass
+
 
 # SUNNY SCENE
 
@@ -54,6 +71,22 @@ def draw_sunny_scene():
         text = font.render("Sunny Weather ☀️", True, BLACK)
         screen.blit(text, (20, 20))
 
+        # analytics panel
+        
+        analytics = pygame.font.SysFont("Arial", 24)
+
+        panel = analytics.render(
+            "Analytics Dashboard 📊",
+            True,
+            BLACK
+        )
+
+        screen.blit(panel, (20, 300))
+
+        # graph of display
+        
+        draw_graph()
+
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
@@ -71,7 +104,6 @@ def draw_sunny_scene():
 
 
 # RAINY SCENE
-
 
 def draw_rainy_scene():
 
@@ -128,6 +160,22 @@ def draw_rainy_scene():
         # Title
         text = font.render("Rainy Weather 🌧️", True, WHITE)
         screen.blit(text, (20, 20))
+
+        # analytics panel
+        
+        analytics = pygame.font.SysFont("Arial", 24)
+
+        panel = analytics.render(
+            "Analytics Dashboard 📊",
+            True,
+            WHITE
+        )
+
+        screen.blit(panel, (20, 300))
+
+        # graph of display
+        
+        draw_graph()
 
         for event in pygame.event.get():
 
@@ -187,6 +235,22 @@ def draw_cloudy_scene():
         text = font.render("Cloudy Weather ☁️", True, BLACK)
         screen.blit(text, (20, 20))
 
+        # analytics panel
+        
+        analytics = pygame.font.SysFont("Arial", 24)
+
+        panel = analytics.render(
+            "Analytics Dashboard 📊",
+            True,
+            BLACK
+        )
+
+        screen.blit(panel, (20, 300))
+
+        # graph of display
+        
+        draw_graph()
+
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
@@ -204,6 +268,7 @@ def draw_cloudy_scene():
 
 
 # THUNDERSTORM SCENE
+
 
 def draw_thunder_scene():
 
@@ -236,6 +301,23 @@ def draw_thunder_scene():
         # Title
         text = font.render("Thunderstorm 🌩️", True, WHITE)
         screen.blit(text, (20, 20))
+
+        # analytics panel
+        
+
+        analytics = pygame.font.SysFont("Arial", 24)
+
+        panel = analytics.render(
+            "Analytics Dashboard 📊",
+            True,
+            WHITE
+        )
+
+        screen.blit(panel, (20, 300))
+
+        # graph of display
+        
+        draw_graph()
 
         for event in pygame.event.get():
 

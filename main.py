@@ -7,6 +7,10 @@ from scenes import (
     draw_thunder_scene
 )
 
+from graph_generator import generate_temperature_graph
+
+temperature_history = []
+
 print(" Welcome to SkyCast")
 print("--------------------------")
 
@@ -25,7 +29,14 @@ if data:
     print("Temperature:", data["temp"], "°C")
     print("Humidity:", data["humidity"], "%")
 
-    
+    # Store temperature
+    temperature_history.append(data["temp"])
+
+    # Generate graph
+    generate_temperature_graph(temperature_history)
+
+    # Scene switching
+
     if weather == "Clear":
         draw_sunny_scene()
 
