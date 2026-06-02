@@ -1,58 +1,66 @@
 # SkyCast — Real-Time Weather Visualizer
 
-SkyCast is a Python-based weather application that transforms real-time weather data into dynamic visual scenes. It combines live API integration, graph visualization, analytics display, and graphics-based rendering to create an interactive weather experience.
+SkyCast is a Python-based weather application that combines real-time weather data, interactive visualizations, animated weather scenes, and a web interface into a single project.
 
-Built as a final project for Stanford Code in Place, 2026, this project demonstrates how code can turn real-time weather data into engaging visual simulations using Python and Pygame.
+Built as a final project for Stanford Code in Place, SkyCast demonstrates API integration, data visualization, graphics programming, web development, and modular software design using Python.
+
+---
+
+## Overview
+
+SkyCast allows users to enter a city name and instantly retrieve live weather information using the OpenWeatherMap API. The application can display weather information through:
+
+* A Flask-based web interface
+* Animated weather visualizations using Pygame
+* Temperature trend graphs using Matplotlib
+* Real-time weather analytics
 
 ---
 
 ## Features
 
-* Real-time weather data using OpenWeatherMap API
-* Dynamic weather scenes (Sunny, Rainy, Cloudy, Thunderstorm)
-* Graphics-based visualization using Pygame
-* Analytics dashboard with graph integration
-* Temperature graph visualization using Matplotlib
-* Clean modular Python structure
+### Real-Time Weather Data
 
----
+* Fetches live weather information using the OpenWeatherMap API
+* Displays:
 
-## How It Works
+  * City Name
+  * Weather Condition
+  * Temperature
+  * Humidity
 
-1. User enters a city name
-2. App fetches live weather data from OpenWeatherMap API
-3. Weather condition is parsed (Clear, Rain, Clouds, etc.)
-4. Matching visual scene is displayed using Pygame
-5. Temperature graph is generated dynamically
-6. Analytics dashboard is rendered inside the application
+### Animated Weather Visualizations
 
----
+SkyCast automatically displays different animated scenes based on current weather conditions:
 
-## Weather Visuals
+* ☀️ Sunny Scene
+* 🌧️ Rainy Scene
+* ☁️ Cloudy Scene
+* 🌩️ Thunderstorm Scene
 
-* **Sunny Scene** → Bright sky with animated sun effect
-* **Rainy Scene** → Moving clouds with falling rain animation
-* **Cloudy Scene** → Animated drifting cloud visuals
-* **Thunderstorm Scene** → Flashing lightning storm effect
+### Analytics Dashboard
 
----
-
-## Analytics Dashboard
-
-SkyCast includes a lightweight analytics dashboard inside the Pygame window:
-
-* Temperature graph visualization
-* Weather analytics panel
+* Temperature graph generation
+* Weather analytics display
 * Dynamic graph rendering using Matplotlib
 
+### Web Interface
+
+* Clean Flask-powered user interface
+* Responsive weather search form
+* Easy-to-use weather dashboard
+
 ---
 
-## Tech Stack
+## Technologies Used
 
 * Python
-* Requests (API calls)
-* Pygame (Graphics & animation)
-* Matplotlib (Graph generation)
+* Flask
+* Requests
+* Pygame
+* Matplotlib
+* HTML
+* CSS
 * OpenWeatherMap API
 
 ---
@@ -60,33 +68,207 @@ SkyCast includes a lightweight analytics dashboard inside the Pygame window:
 ## Project Structure
 
 ```text
-skycast-weather-visualizer/
+SkyCast/
 │
+├── app.py
 ├── main.py
-├── scenes.py
 ├── weather_api.py
 ├── graph_generator.py
-├── README.md
-└── .gitignore
+├── scenes.py
+├── config.py
+├── requirements.txt
+├── .gitignore
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+│
+└── README.md
 ```
 
 ---
 
-## How to Run
+## How It Works
+
+### Desktop Visualization Mode
+
+1. User enters a city name
+2. Weather data is fetched from OpenWeatherMap
+3. Weather condition is analyzed
+4. Temperature graph is generated
+5. Appropriate animated weather scene is displayed
+
+### Web Application Mode
+
+1. User opens the Flask application
+2. Enters a city name
+3. Weather data is fetched in real time
+4. Results are displayed in a clean web dashboard
+
+---
+
+## API Setup
+
+This project requires an OpenWeatherMap API key.
+
+### Step 1: Create a Free Account
+
+Visit:
+
+https://openweathermap.org/
+
+Create a free account and log in.
+
+### Step 2: Generate an API Key
+
+Navigate to:
+
+API Keys → Generate New Key
+
+Copy your API key.
+
+### Step 3: Create config.py
+
+Create a file named:
+
+```python
+config.py
+```
+
+Add:
+
+```python
+API_KEY = "YOUR_OPENWEATHER_API_KEY"
+```
+
+Example:
+
+```python
+API_KEY = "abcd1234yourapikey"
+```
+
+### Important
+
+Do not commit your API key to GitHub.
+
+Your `.gitignore` should contain:
+
+```text
+config.py
+```
+
+This prevents your private API key from being uploaded publicly.
+
+---
+
+## Installation
+
+Clone the repository:
 
 ```bash
-pip install requests pygame matplotlib
+git clone <repository-url>
+cd SkyCast
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Or manually:
+
+```bash
+pip install flask requests pygame matplotlib
+```
+
+---
+
+## Running the Project
+
+### Run the Flask Web Application
+
+```bash
+python app.py
+```
+
+Open:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+### Run the Desktop Visualization Version
+
+```bash
 python main.py
 ```
+
+Enter a city name when prompted.
+
+The application will:
+
+* Fetch live weather data
+* Generate a temperature graph
+* Display an animated weather scene
+
+Press ESC to close the visualization window.
+
+---
+
+## Example Output
+
+Weather Report:
+
+```text
+City: Kolkata
+Weather: Clouds
+Temperature: 31°C
+Humidity: 70%
+```
+
+The application then generates:
+
+* Temperature graph
+* Weather analytics dashboard
+* Animated weather visualization
 
 ---
 
 ## Future Improvements
 
-* Sound effects for weather scenes
-* Multi-city analytics tracking
+* Multi-city weather comparison
+* Historical weather tracking
 * Forecast support
-* Improved UI transitions
-* Expanded weather condition support
+* Weather alerts
+* Sound effects
+* Enhanced dashboard analytics
+* Database integration
+* Mobile-friendly web interface
 
 ---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+* API Integration
+* JSON Data Processing
+* Flask Web Development
+* Pygame Graphics Programming
+* Data Visualization
+* Modular Python Design
+* User Interface Development
+* Software Project Organization
+
+---
+
+## Author
+
+Raunak Sen
+
+Built as part of the Stanford Code in Place learning journey using Python, APIs, data visualization, graphics programming, and web technologies.
