@@ -29,10 +29,10 @@ if data:
     print("Temperature:", data["temp"], "°C")
     print("Humidity:", data["humidity"], "%")
 
-    # Store temperature
+    # Storing temperature
     temperature_history.append(data["temp"])
 
-    # Generate graph
+    # Generating graph
     generate_temperature_graph(temperature_history)
 
     # Scene switching
